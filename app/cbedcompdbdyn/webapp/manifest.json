@@ -165,7 +165,7 @@
                   "actions": {
                     "custbutton": {
                       "press": "cbedcompdbdyn.ext.controller.Headerbutton.onpress",
-                      "visible": true,
+                      "visible": false,
                       "enabled": true,
                       "text": "Test"
                     }

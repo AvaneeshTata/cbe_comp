@@ -15,44 +15,44 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 				 */
 
 				onInit: function () {
-
+					debugger
 					// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 					var oModel = this.base.getExtensionAPI().getModel();
-					debugger
+					// debugger
 					let header_anchor = this.base.getView().mAggregations.content[0].mAggregations.headerTitle;
 					let header_fragment = sap.ui.getCore().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::HeaderFacetCustomContainer::HeaderFragment--headervbox1");
 					header_anchor.destroyActions();
-					header_anchor.addAction(new sap.m.Button({
-						text: "ItemList-ExpandAll",
-						visible: false,
-						press: function (oEvent) {
-							debugger
-							if (oEvent.getSource().getText() == "ItemList-ExpandAll") {
-								oEvent.getSource().setText("ItemList-CollapseAll");
-								header_fragment.getItems()[0].firePress()
-							}
-							else {
-								oEvent.getSource().setText("ItemList-ExpandAll");
-								header_fragment.getItems()[0].firePress()
-							}
-						}
-					}))
-					header_anchor.addAction(new sap.m.Button({
-						text: "VendorList-ExpandAll",
-						visible: false,
-						press: function (oEvent) {
-							debugger
-							if (oEvent.getSource().getText() == "VendorList-ExpandAll") {
-								oEvent.getSource().setText("VendorList-CollapseAll");
-								header_fragment.getItems()[1].firePress()
-								debugger
-							}
-							else {
-								oEvent.getSource().setText("VendorList-ExpandAll");
-								header_fragment.getItems()[1].firePress()
-							}
-						}
-					}))
+					// header_anchor.addAction(new sap.m.Button({
+					// 	text: "ItemList-ExpandAll",
+					// 	visible: false,
+					// 	press: function (oEvent) {
+					// 		debugger
+					// 		if (oEvent.getSource().getText() == "ItemList-ExpandAll") {
+					// 			oEvent.getSource().setText("ItemList-CollapseAll");
+					// 			header_fragment.getItems()[0].firePress()
+					// 		}
+					// 		else {
+					// 			oEvent.getSource().setText("ItemList-ExpandAll");
+					// 			header_fragment.getItems()[0].firePress()
+					// 		}
+					// 	}
+					// }))
+					// header_anchor.addAction(new sap.m.Button({
+					// 	text: "VendorList-ExpandAll",
+					// 	visible: false,
+					// 	press: function (oEvent) {
+					// 		debugger
+					// 		if (oEvent.getSource().getText() == "VendorList-ExpandAll") {
+					// 			oEvent.getSource().setText("VendorList-CollapseAll");
+					// 			header_fragment.getItems()[1].firePress()
+					// 			debugger
+					// 		}
+					// 		else {
+					// 			oEvent.getSource().setText("VendorList-ExpandAll");
+					// 			header_fragment.getItems()[1].firePress()
+					// 		}
+					// 	}
+					// }))
 
 				},
 				routing: {
@@ -644,7 +644,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 									}
 								}
 							}
-
+							debugger
 							for (let key in counter_item) {
 								if (counter_item[key] == itemstable.getItems().length) {
 
@@ -661,7 +661,12 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							// itemstable.getColumns()[itemstable.getColumns().length - 1].addItem
 
 
-
+							// itemstable.getColumns()[itemstable.getColumns().length - 1].addContent(new sap.ui.core.Icon(`tabexpand${generateUniqueId()}`,{
+							// 	src:'sap-icon://expand',
+							// 	press:function (oEvent) {
+							// 		debugger
+							// 	}
+							// }))
 
 
 
