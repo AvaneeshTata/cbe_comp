@@ -4,7 +4,7 @@
 	<HBox id="mainhbox1" class="mainHboxClass">
 		<VBox id="leftSectionvbox1" class="rightPadding" width="30%">
 			<HBox id="item_supplier1" class="section_header sticky" justifyContent="SpaceBetween">
-				<VBox id="items1"  width="80%" alignItems="Start">
+				<VBox id="items1" width="80%" alignItems="Start">
 					<HBox id="hSop">
 						<Label design="Bold" id="sopheader" tooltip="Subject of ProposalOROrder" text="SOP :⠀"></Label>
 						<Text id="Sopvalue" text=""></Text>
@@ -18,10 +18,10 @@
 					<Table id="vendorDetailsTable" width="100%">
 						<columns>
 							<Column id="vendorName" hAlign="Center">
-								<Label id="vendornamelabel" design="Bold"  text="Vendor Name"></Label>
+								<Label id="vendornamelabel" design="Bold" text="Vendor Name"></Label>
 							</Column>
 							<Column id="awardedVendor" hAlign="Center">
-								<Label id="awardedVendorlabel" design="Bold"  text="Awarded Vendor"></Label>
+								<Label id="awardedVendorlabel" design="Bold" text="Awarded Vendor"></Label>
 							</Column>
 						</columns>
 					</Table>
@@ -34,9 +34,9 @@
 					<Label design="Bold" id="validityheader" text="Validity :"/>
 				</VBox>
 			</HBox>
-			<HBox id="demoxdemoe121" visible="false" justifyContent="Center"><!--Not used for structure purpose we are keeping it but its functionality is working(icon)-->
+			<HBox id="demoxdemoe121" visible="false" justifyContent="Center">				<!--Not used for structure purpose we are keeping it but its functionality is working(icon)-->
 				<HBox id="dexmodemotest" height="53px" alignItems="Center">
-					<Label id="titxle12" text="Expand" design="Bold"/>
+					<Label id="titxle12" text="Expand" design="Bold" />
 				</HBox>
 			</HBox>
 			<HBox id="tablesHbox"  width = "auto">
@@ -78,7 +78,10 @@
 							<Text id="t9" text="UOM" tooltip="Unit of Measure" wrapping="false" />
 						</Column>
 						<Column id="col9">
-							<Text id="10" text=" Quantity" tooltip="Quantity" wrapping="false" />
+							<!-- <HBox id="lastcol"> -->
+								<Text id="10" text=" Quantity" tooltip="Quantity" wrapping="false" ></Text>
+
+							<!-- </HBox> -->
 						</Column>
 					</columns>
 

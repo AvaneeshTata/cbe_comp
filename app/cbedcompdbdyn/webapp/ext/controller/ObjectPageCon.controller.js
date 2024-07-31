@@ -59,6 +59,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 					onAfterBinding: async function (oBindingContext) {
 						try {
 
+							
 							// let testheaderbutton1 = this.base.getView().byId("cbedcompdbdyn::Project_DetailsObjectPage--fe::ObjectPage-OPHeaderContent");
 							// testheaderbutton1.addContent(new sap.ui.core.Icon("icon111",{
 							// 	src:"sap-icon://expand"
@@ -281,7 +282,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 							let sop_value = pan_info.find(item => item.ProjectId == cleaned_project_id);
 
 							subject_op.setText(`${sop_value.Subject_of_ProposalOROrder}`);
+							subject_op.setTooltip(`${sop_value.Subject_of_ProposalOROrder}`);
 							subject_op.setTextAlign("End");
+							subject_op.setWrapping(false);
+							subject_op.setWidth("20vw");
 
 
 							// omainHBox.refreshAggregation();
@@ -574,7 +578,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 								})
 								columnlist.addCell(uom);
 
-
+								debugger
 								let qnt = 0;
 								for (let j = 0; j < list_of_items.length; j++) {
 									// const element = list_of_items[i];
@@ -1052,9 +1056,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 															const oItem = new sap.m.ColumnListItem({
 																id: `${"item1data" + generateUniqueId()}`,
 																cells: [
-																	new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}` }),
+																	new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`,tooltip: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`,wrapping:false }),
 																	new sap.m.Text({ text: `${itemMatchingPrjVenPan[0].Quantity ?? ' '}` }),
-																	new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` }),
+																	new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}`,tooltip: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}`,wrapping:false }),
 
 																],
 																// visible: false,
@@ -1121,9 +1125,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																			justifyContent: 'SpaceBetween',
 																			alignContent: 'SpaceBetween',
 																			items: [
-																				new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}` }),
-																				new sap.m.Text({ text: `${itemMatchingPrjVenPan[j].Quantity ?? ' '}` }),
-																				new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` }),
+																				new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`,tooltip: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`,wrapping:false }),
+																				new sap.m.Text({ text: `${itemMatchingPrjVenPan[j].Quantity ?? ' '}`,tooltip: `${itemMatchingPrjVenPan[j].Quantity ?? ' '}`,wrapping:false }),
+																				new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}`,tooltip: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit}` ,wrapping:false}),
 																			]
 																		})
 
@@ -1155,11 +1159,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																	const oItem = new sap.m.ColumnListItem({
 																		id: `${"item1data" + generateUniqueId()}`,
 																		cells: [
-																			new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}` }),
+																			new sap.m.Text({ text: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`,tooltip: `${formatCurrency(AmtWithoutCommas, grandTotalUnit) ?? ' '} ${grandTotalUnit}`, wrapping:false }),
 																			new sap.m.Text({ text: `${itemMatchingPrjVenPan[l].Quantity ?? ' '}` }),
 																			new sap.m.HBox({
 																				items: [
-																					new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit} ⠀` }),
+																					new sap.m.Text({ text: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit} ⠀`,tooltip: `${formatCurrency(total_amount_value, grandTotalUnit) + " " + grandTotalUnit} ⠀`, wrapping:false }),
 																					new sap.ui.core.Icon({
 																						src: "sap-icon://overflow",
 																						activeColor: 'black',
@@ -1190,7 +1194,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension', 'sap/m/MessageToast', 'sap
 																	if (vendorslist[k].Awarded_Vendor == 'YES') {
 																		oItem.addStyleClass("ItemPresentStyle")
 																	}
-																	oItem.addStyleClass("ItemPresentStyle")
+																	// oItem.addStyleClass("ItemPresentStyle")
 																	oTable.addItem(oItem);
 																	break;
 																}
